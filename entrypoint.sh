@@ -1,4 +1,7 @@
 # We are importing the cron from all /etc/cron.d/crons
+printenv | sed 's/^\(.*\)$/\1/g' > /etc/cron.d/crontab
+cat /etc/cron.d/crons >> /etc/cron.d/crontab
+rm -f /etc/cron.d/crons
 
 crontab /etc/cron.d/crontab
 
